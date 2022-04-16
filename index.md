@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<p width =200>  
+<p width ="75%">  
 
 # Tcp implemetation in Linux Kernel
 ## Some important files.   
