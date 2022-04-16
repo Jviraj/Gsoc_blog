@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-<p width =500>  
 
 # Tcp implemetation in Linux Kernel
 ## Some important files.   
@@ -76,4 +75,4 @@ tcp_v4_connect() validates end host connection by using ip_route_connnect() func
 tcp_connect() calls first tcp_connect_init(), that will initialize parameters used with TCP connection, such as maximum segment size (MSS) and TCP window size. After that tcp_connect() will reserve memory for socket buffer, add buffer to sockets write queue and passes buffer to function tcp_transmit_skb(), that builds TCP headers and passes data to network layer. Before returning tcp connect() will start retransmission timer for the SYN packet. When SYN-ACK packet is received, state of socket is modified to ESTABLISHED, ACK is sent and communication between nodes may begin.
  
 * **Listening Socket:** bind() must be called to pick up port what will be listened to. Then listen() must be called. Bind() maps to inet_bind(). This function validates port number and socket, and then tries to bind the wanted port. If everything goes right, 0 will be returned otherwise error code indicating the problem will be returned. Listen() will become to function inet_listen(). This function will perform a few checks, and then calls function inet_csk_listen_start(), which allocates memory for the socket accept queue, sets socket to TCP_LISTEN and sets socket to TCP_LISTEN and adds socket to TCP hash table to wait for incoming connections.
-</p>
+
